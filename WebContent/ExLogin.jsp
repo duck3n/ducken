@@ -28,11 +28,12 @@ text-align: center;
 font-weight: bold;
 color: red;
 }
+
 </style>
 
 </head>
 <body>
-
+hello~
 <jsp:include page="ExHeader.jsp"></jsp:include>
 
 
