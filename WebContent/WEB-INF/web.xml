@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd" id="WebApp_ID" version="4.0">
+  <display-name>ExBoard</display-name>
+
+
+  <listener>
+  	<listener-class>com.exam.jdbc.DBCPInitListener</listener-class>  
+  </listener>
+  
+  <context-param>
+  	<param-name>poolConfig</param-name>
+  	<param-value>
+  		jdbcdriver=com.mysql.jdbc.Driver
+  		jdbcUrl=jdbc:mysql://localhost:3306/goott7?useSSL=false
+  		dbUser=scott
+  		dbPass=tiger
+  		validationQuery=select 1
+  		minIdle=3
+  		maxIdle=30
+  		poolName=mvc
+  	</param-value>  
+  </context-param>
+  
+  <servlet>
+  	<servlet-name>ControlUsingURI</servlet-name>
+    <servlet-class>com.exam.control.ControlUsingURI</servlet-class>
+    <init-param>
+    	<param-name>configFile</param-name>
+    	<param-value>
+    		/WEB-INF/cmdHandlerURI.properties
+    	</param-value>
+    </init-param>
+    <load-on-startup>1</load-on-startup>  
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>ControlUsingURI</servlet-name>
+  	<url-pattern>*.do</url-pattern>  
+  </servlet-mapping>
+</web-app>
