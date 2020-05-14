@@ -19,7 +19,7 @@ public class ExMypageControl extends HttpServlet{
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		
 		// header에서 mypage를 누르면 특별한 동작 없이 바로 페이지 이동
-		RequestDispatcher rd = req.getRequestDispatcher("mypage.jsp");
+		RequestDispatcher rd = req.getRequestDispatcher("ExMypage.jsp");
 		rd.forward(req, resp);
 		
 	}

@@ -29,7 +29,7 @@ public class ExMypageHandler implements ExAction{
 		dao.updateInfo(vo);
 		
 		
-		return "./ExMypage.jsp";
+		return "ExMypage.jsp";
 		
 		
 		
